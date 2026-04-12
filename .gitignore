@@ -22,3 +22,4 @@ results/
 wandb/
 .benchmark_pid
 baselines_*.log
+.DS_Store
