@@ -59,6 +59,16 @@ MODELS: list[dict[str, Any]] = [
         "backend": "elevenlabs",
         "requires_env": ("ELEVENLABS_API_KEY",),
     },
+    {
+        "name": "speechmatics/ga",
+        "backend": "speechmatics",
+        "requires_env": ("SPEECHMATICS_API_KEY",),
+    },
+    {
+        "name": "google/chirp_2-ga-IE",
+        "backend": "google",
+        "requires_env": ("GOOGLE_CLOUD_PROJECT", "GOOGLE_APPLICATION_CREDENTIALS"),
+    },
 ]
 
 DATASETS: list[dict[str, Any]] = [

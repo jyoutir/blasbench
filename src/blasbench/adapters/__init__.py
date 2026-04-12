@@ -2,9 +2,14 @@
 
 from __future__ import annotations
 
+import io
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from typing import Any
+
+import librosa
+import numpy as np
+import soundfile as sf
 
 
 @dataclass
@@ -63,3 +68,12 @@ class BaseAdapter(ABC):
     def num_parameters(self) -> int | None:
         """Number of model parameters, if known."""
         return None
+
+
+def to_wav_bytes(audio_array: Any, sample_rate: int) -> bytes:
+    audio = np.asarray(audio_array, dtype=np.float32)
+    if sample_rate != 16000:
+        audio = librosa.resample(audio, orig_sr=sample_rate, target_sr=16000)
+    buf = io.BytesIO()
+    sf.write(buf, audio, 16000, format="WAV", subtype="PCM_16")
+    return buf.getvalue()

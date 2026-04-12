@@ -14,8 +14,13 @@ from typing import Any
 import numpy as np
 
 from blasbench.adapters import BaseAdapter
+from blasbench.adapters.azure_adapter import AzureAdapter
+from blasbench.adapters.elevenlabs_adapter import ElevenLabsAdapter
+from blasbench.adapters.google_adapter import GoogleAdapter
 from blasbench.adapters.mms_adapter import MMSAdapter
+from blasbench.adapters.openai_adapter import OpenAIAdapter
 from blasbench.adapters.seamless_adapter import SeamlessM4TAdapter
+from blasbench.adapters.speechmatics_adapter import SpeechmaticsAdapter
 from blasbench.adapters.transformers_adapter import TransformersAdapter
 from blasbench.adapters.wav2vec2_adapter import Wav2Vec2Adapter
 from blasbench.config import DatasetConfig, EvalConfig, ModelConfig, NormalizerConfig
@@ -270,6 +275,20 @@ def build_adapter(config: ModelConfig) -> BaseAdapter:
                 torch_dtype=config.torch_dtype,
                 device=config.device,
             )
+        case "azure":
+            return AzureAdapter()
+        case "elevenlabs":
+            assert config.name.startswith("elevenlabs/"), (
+                "elevenlabs backend expects elevenlabs/<model>"
+            )
+            return ElevenLabsAdapter(model_id=config.name.removeprefix("elevenlabs/"))
+        case "google":
+            return GoogleAdapter()
+        case "openai":
+            assert config.name.startswith("openai/"), "openai backend expects openai/<model>"
+            return OpenAIAdapter(model_name=config.name.removeprefix("openai/"))
+        case "speechmatics":
+            return SpeechmaticsAdapter()
         case _:
             raise ValueError(f"Unknown backend: {backend}")
 

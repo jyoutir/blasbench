@@ -6,11 +6,7 @@ import io
 import os
 from typing import Any
 
-import librosa
-import numpy as np
-import soundfile as sf
-
-from blasbench.adapters import BaseAdapter, TranscriptionResult
+from blasbench.adapters import BaseAdapter, TranscriptionResult, to_wav_bytes
 from blasbench.registry import model_registry
 
 
@@ -35,7 +31,7 @@ class OpenAIAdapter(BaseAdapter):
 
         results: list[TranscriptionResult] = []
         for audio, sr in zip(audio_arrays, sample_rates):
-            wav = _to_wav_bytes(np.asarray(audio, dtype=np.float32), sr)
+            wav = to_wav_bytes(audio, sr)
             buf = io.BytesIO(wav)
             buf.name = "audio.wav"
             resp = self._client.audio.transcriptions.create(
@@ -50,11 +46,3 @@ class OpenAIAdapter(BaseAdapter):
     @property
     def name(self) -> str:
         return f"openai/{self._model_name}"
-
-
-def _to_wav_bytes(audio: np.ndarray[Any, Any], sr: int) -> bytes:
-    if sr != 16000:
-        audio = librosa.resample(audio, orig_sr=sr, target_sr=16000)
-    buf = io.BytesIO()
-    sf.write(buf, audio, 16000, format="WAV", subtype="PCM_16")
-    return buf.getvalue()

@@ -70,3 +70,13 @@ class TestModelRegistry:
         import blasbench.adapters.azure_adapter  # noqa: F401
 
         assert "azure" in model_registry
+
+    def test_speechmatics_registered(self) -> None:
+        import blasbench.adapters.speechmatics_adapter  # noqa: F401
+
+        assert "speechmatics" in model_registry
+
+    def test_google_registered(self) -> None:
+        import blasbench.adapters.google_adapter  # noqa: F401
+
+        assert "google" in model_registry
