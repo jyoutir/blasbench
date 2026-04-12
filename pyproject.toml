@@ -9,7 +9,10 @@ description = "Irish (Gaeilge) ASR evaluation harness"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.10"
-authors = [{ name = "BlasBench Contributors" }]
+authors = [
+    { name = "Jyoutir Raj", email = "jyoutirraj@gmail.com" },
+    { name = "John Conway", email = "johnconway114@gmail.com" },
+]
 keywords = ["irish", "gaeilge", "asr", "speech-to-text", "evaluation", "whisper"]
 classifiers = [
     "Development Status :: 3 - Alpha",

@@ -80,3 +80,8 @@ class TestModelRegistry:
         import blasbench.adapters.google_adapter  # noqa: F401
 
         assert "google" in model_registry
+
+    def test_omnilingual_registered(self) -> None:
+        import blasbench.adapters.omnilingual_adapter  # noqa: F401
+
+        assert "omnilingual" in model_registry

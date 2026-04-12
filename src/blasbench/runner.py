@@ -18,6 +18,7 @@ from blasbench.adapters.azure_adapter import AzureAdapter
 from blasbench.adapters.elevenlabs_adapter import ElevenLabsAdapter
 from blasbench.adapters.google_adapter import GoogleAdapter
 from blasbench.adapters.mms_adapter import MMSAdapter
+from blasbench.adapters.omnilingual_adapter import OmniASRAdapter
 from blasbench.adapters.openai_adapter import OpenAIAdapter
 from blasbench.adapters.seamless_adapter import SeamlessM4TAdapter
 from blasbench.adapters.speechmatics_adapter import SpeechmaticsAdapter
@@ -287,6 +288,11 @@ def build_adapter(config: ModelConfig) -> BaseAdapter:
         case "openai":
             assert config.name.startswith("openai/"), "openai backend expects openai/<model>"
             return OpenAIAdapter(model_name=config.name.removeprefix("openai/"))
+        case "omnilingual":
+            assert config.name.startswith("omnilingual/"), (
+                "omnilingual backend expects omnilingual/<model_card>"
+            )
+            return OmniASRAdapter(model_card=config.name.removeprefix("omnilingual/"))
         case "speechmatics":
             return SpeechmaticsAdapter()
         case _:

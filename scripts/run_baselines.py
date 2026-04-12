@@ -16,12 +16,8 @@ from __future__ import annotations
 import argparse
 import logging
 import os
-import sys
 import time
-from pathlib import Path
 from typing import Any
-
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from blasbench.config import (
     DatasetConfig,
@@ -48,6 +44,8 @@ MODELS: list[dict[str, Any]] = [
     {"name": "kingabzpro/wav2vec2-large-xls-r-1b-Irish", "backend": "wav2vec2"},
     {"name": "facebook/seamless-m4t-v2-large", "backend": "seamless"},
     {"name": "facebook/mms-1b-all", "backend": "mms"},
+    {"name": "omnilingual/omniASR_LLM_300M_v2", "backend": "omnilingual"},
+    {"name": "omnilingual/omniASR_LLM_7B_v2", "backend": "omnilingual"},
     {
         "name": "azure/speech-ga-IE",
         "backend": "azure",

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use BlasBench, please cite the paper and this software."
+title: "BlasBench: An Irish (Gaeilge) ASR evaluation harness"
+authors:
+  - given-names: Jyoutir
+    family-names: Raj
+    email: jyoutirraj@gmail.com
+  - given-names: John
+    family-names: Conway
+    email: johnconway114@gmail.com
+version: "0.1.0"
+license: MIT
+repository-code: "https://github.com/jyoutir/blasbench"
+preferred-citation:
+  type: article
+  title: "BlasBench: An Open Benchmark for Irish Speech Recognition"
+  authors:
+    - given-names: Jyoutir
+      family-names: Raj
+    - given-names: John
+      family-names: Conway
+  year: 2026
+  # TODO: replace with arXiv id + URL once the preprint is live.
+  identifiers:
+    - type: other
+      value: "arXiv:TODO"
+      description: "arXiv preprint — id pending"

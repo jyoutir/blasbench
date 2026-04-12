@@ -1,11 +1,12 @@
-"""CLI interface for the Blas Voice evaluation harness.
+"""CLI interface for the BlasBench evaluation harness.
 
 Usage:
     blasbench evaluate --model whisper-large-v3 --dataset common-voice-ga
-    blasbench benchmark --config benchmark_suite.yaml
     blasbench normalize "Céad míle fáilte!"
     blasbench leaderboard
     blasbench list-datasets
+
+For the full model × dataset baseline sweep, use scripts/run_baselines.py.
 """
 
 from __future__ import annotations
@@ -17,7 +18,6 @@ import typer
 from rich.console import Console
 
 from blasbench.config import (
-    BenchmarkSuiteConfig,
     DatasetConfig,
     EvalConfig,
     ModelConfig,
@@ -133,47 +133,6 @@ def evaluate(  # noqa: B008
         console.print(f"[green]Results saved to {eval_config.output_path}[/green]")
     elif formatted:
         console.print(formatted)
-
-
-@app.command()
-def benchmark(  # noqa: B008
-    config_file: Path = typer.Argument(..., help="Benchmark suite YAML config"),
-    verbose: bool = typer.Option(False, "--verbose", "-v", help="Verbose logging"),
-) -> None:
-    """Run a benchmark suite (model x dataset matrix evaluation)."""
-    if verbose:
-        logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(message)s")
-
-    suite = BenchmarkSuiteConfig.from_yaml(config_file)
-    configs = suite.to_eval_configs()
-    console.print(
-        f"[bold]Running benchmark suite: "
-        f"{len(suite.models)} models x {len(suite.datasets)} datasets "
-        f"= {len(configs)} evaluations[/bold]"
-    )
-
-    from blasbench.runner import run_evaluation
-
-    for i, eval_config in enumerate(configs, 1):
-        console.print(
-            f"\n[bold cyan][{i}/{len(configs)}][/bold cyan] "
-            f"{eval_config.model.name} on {eval_config.dataset.name}"
-        )
-        try:
-            result = run_evaluation(eval_config, save_experiment_flag=eval_config.save_experiment)
-            format_result(result, fmt="table", console=console)
-        except Exception as e:
-            console.print(f"[red]Error: {e}[/red]")
-            continue
-
-    console.print("\n[bold green]Benchmark suite complete.[/bold green]")
-
-    # Generate leaderboard if experiments were saved
-    if suite.save_experiments:
-        from blasbench.runner import generate_leaderboard
-
-        lb = generate_leaderboard()
-        console.print(lb)
 
 
 @app.command()

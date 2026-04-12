@@ -1,6 +1,0 @@
-type: huggingface
-name: mozilla-foundation/common_voice_17_0
-config: ga-IE
-split: test
-audio_column: audio
-text_column: sentence

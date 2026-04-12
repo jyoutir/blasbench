@@ -45,3 +45,12 @@ class TestBuildAPIAdapters:
             ModelConfig(name="google/chirp_2-ga-IE", generate_kwargs={"backend": "google"})
         )
         assert adapter.name == "google/chirp_2/ga-IE"
+
+    def test_builds_omnilingual(self) -> None:
+        adapter = build_adapter(
+            ModelConfig(
+                name="omnilingual/omniASR_LLM_7B_v2",
+                generate_kwargs={"backend": "omnilingual"},
+            )
+        )
+        assert adapter.name == "omnilingual/omniASR_LLM_7B_v2/gle_Latn"

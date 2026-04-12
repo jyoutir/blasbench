@@ -5,12 +5,9 @@ from __future__ import annotations
 
 import argparse
 import os
-import sys
 from pathlib import Path
 
 import soundfile as sf
-
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from blasbench.config import ModelConfig
 from blasbench.runner import build_adapter

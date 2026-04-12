@@ -1,8 +1,0 @@
-name: openai/whisper-small
-language: irish
-task: transcribe
-batch_size: 32
-chunk_length_s: 30.0
-torch_dtype: float16
-device: auto
-generate_kwargs: {}
