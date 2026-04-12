@@ -39,9 +39,9 @@ python scripts/run_baselines.py
 
 Implement one function: audio (16kHz, `np.ndarray`) in, string out. Wrap it in
 a `BaseAdapter` subclass under `src/blasbench/adapters/` and register it via
-`@model_registry.register("your-model-name")`. The three commercial adapters
-(`azure_adapter.py`, `openai_adapter.py`, `elevenlabs_adapter.py`) are the
-shortest templates — each is under 80 lines.
+`@model_registry.register("your-model-name")`. There currently also three commercial adapters
+(`azure_adapter.py`, `openai_adapter.py`, `elevenlabs_adapter.py`) to support 
+commercial models. 
 
 ## Citation
 
