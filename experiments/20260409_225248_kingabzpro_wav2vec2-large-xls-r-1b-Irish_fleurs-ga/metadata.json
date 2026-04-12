@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "run_id": "20260409_225248_kingabzpro_wav2vec2-large-xls-r-1b-Irish_google_fleurs_test",
+  "timestamp": "2026-04-09T22:52:48Z",
+  "duration_seconds": 0.0,
+  "git_commit": "4d1a4b410fd7c5f35111e3c4a95fa6760b98114f",
+  "git_branch": "main",
+  "git_dirty": true,
+  "model_name": "kingabzpro/wav2vec2-large-xls-r-1b-Irish",
+  "model_source": "kingabzpro/wav2vec2-large-xls-r-1b-Irish",
+  "model_num_parameters": 962542243,
+  "model_dtype": "",
+  "dataset_name": "google/fleurs",
+  "dataset_split": "test",
+  "dataset_num_samples": 842,
+  "dataset_total_audio_hours": 3.4617000000000058,
+  "normalizer": "irish",
+  "config_hash": "sha256:6304803a8d08025b",
+  "gpu": "NVIDIA H100 80GB HBM3",
+  "cuda_version": "12.4",
+  "python_version": "3.11.10",
+  "platform_info": "Linux-6.8.0-90-generic-x86_64-with-glibc2.35",
+  "package_versions": {
+    "torch": "2.4.1+cu124",
+    "transformers": "5.5.3",
+    "jiwer": "unknown",
+    "datasets": "2.21.0",
+    "librosa": "0.11.0",
+    "numpy": "2.4.4"
+  }
+}

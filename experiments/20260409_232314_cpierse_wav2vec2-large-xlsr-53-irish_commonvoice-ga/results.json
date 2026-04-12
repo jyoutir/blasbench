@@ -1,0 +1,26 @@
+{
+  "model": "cpierse/wav2vec2-large-xlsr-53-irish",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 49.36,
+    "wer_ci95_lo": 47.32,
+    "wer_ci95_hi": 51.29,
+    "cer": 20.98,
+    "cer_ci95_lo": 19.88,
+    "cer_ci95_hi": 21.98,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 2814,
+    "insertions": 262,
+    "deletions": 274,
+    "hits": 3699,
+    "substitution_rate": 41.46,
+    "insertion_rate": 3.86,
+    "deletion_rate": 4.04
+  },
+  "rtfx": 314.24,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 13.38,
+  "num_skipped": 0,
+  "num_parameters": 315473570
+}

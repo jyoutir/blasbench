@@ -18,7 +18,6 @@ venv/
 *.flac
 *.ogg
 data/
-results/
 wandb/
 .benchmark_pid
 baselines_*.log

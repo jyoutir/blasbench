@@ -1,0 +1,26 @@
+{
+  "model": "facebook/omniASR_LLM_300M_v2",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 37.63,
+    "wer_ci95_lo": 35.59,
+    "wer_ci95_hi": 39.83,
+    "cer": 19.18,
+    "cer_ci95_lo": 17.84,
+    "cer_ci95_hi": 20.74,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 1990,
+    "insertions": 229,
+    "deletions": 335,
+    "hits": 4462,
+    "substitution_rate": 29.32,
+    "insertion_rate": 3.37,
+    "deletion_rate": 4.94
+  },
+  "rtfx": 15.83,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 265.61,
+  "num_skipped": 0,
+  "num_parameters": 300000000
+}

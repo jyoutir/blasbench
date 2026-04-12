@@ -1,0 +1,26 @@
+{
+  "model": "cpierse/wav2vec2-large-xlsr-53-irish",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 83.19,
+    "wer_ci95_lo": 82.16,
+    "wer_ci95_hi": 84.37,
+    "cer": 41.93,
+    "cer_ci95_lo": 41.22,
+    "cer_ci95_hi": 42.73,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 14369,
+    "insertions": 2057,
+    "deletions": 1008,
+    "hits": 5580,
+    "substitution_rate": 68.56,
+    "insertion_rate": 9.82,
+    "deletion_rate": 4.81
+  },
+  "rtfx": 568.34,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 21.93,
+  "num_skipped": 0,
+  "num_parameters": 315473570
+}

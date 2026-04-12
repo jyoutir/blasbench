@@ -1,0 +1,26 @@
+{
+  "model": "jimregan/wav2vec2-large-xlsr-irish-basic",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 83.01,
+    "wer_ci95_lo": 81.94,
+    "wer_ci95_hi": 84.09,
+    "cer": 40.82,
+    "cer_ci95_lo": 40.1,
+    "cer_ci95_hi": 41.61,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 14295,
+    "insertions": 2056,
+    "deletions": 1045,
+    "hits": 5617,
+    "substitution_rate": 68.21,
+    "insertion_rate": 9.81,
+    "deletion_rate": 4.99
+  },
+  "rtfx": 603.54,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 20.65,
+  "num_skipped": 0,
+  "num_parameters": 315473570
+}

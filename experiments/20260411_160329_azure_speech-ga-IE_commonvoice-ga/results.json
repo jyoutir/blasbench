@@ -1,0 +1,26 @@
+{
+  "model": "azure/speech-ga-IE",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 22.25,
+    "wer_ci95_lo": 20.69,
+    "wer_ci95_hi": 23.83,
+    "cer": 11.37,
+    "cer_ci95_lo": 10.37,
+    "cer_ci95_hi": 12.46,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 1070,
+    "insertions": 117,
+    "deletions": 323,
+    "hits": 5394,
+    "substitution_rate": 15.77,
+    "insertion_rate": 1.72,
+    "deletion_rate": 4.76
+  },
+  "rtfx": 4.39,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 958.58,
+  "num_skipped": 0,
+  "num_parameters": 0
+}

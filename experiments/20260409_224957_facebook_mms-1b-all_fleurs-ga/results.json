@@ -1,0 +1,26 @@
+{
+  "model": "facebook/mms-1b-all",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 61.57,
+    "wer_ci95_lo": 60.76,
+    "wer_ci95_hi": 62.43,
+    "cer": 25.97,
+    "cer_ci95_lo": 25.51,
+    "cer_ci95_hi": 26.47,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 10877,
+    "insertions": 671,
+    "deletions": 1355,
+    "hits": 8725,
+    "substitution_rate": 51.9,
+    "insertion_rate": 3.2,
+    "deletion_rate": 6.47
+  },
+  "rtfx": 241.76,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 51.55,
+  "num_skipped": 0,
+  "num_parameters": 964748494
+}

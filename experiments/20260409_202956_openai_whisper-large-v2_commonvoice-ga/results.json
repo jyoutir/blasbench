@@ -1,0 +1,26 @@
+{
+  "model": "openai/whisper-large-v2",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 106.0,
+    "wer_ci95_lo": 95.44,
+    "wer_ci95_hi": 120.36,
+    "cer": 68.53,
+    "cer_ci95_lo": 58.05,
+    "cer_ci95_hi": 82.07,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 4997,
+    "insertions": 1354,
+    "deletions": 843,
+    "hits": 947,
+    "substitution_rate": 73.63,
+    "insertion_rate": 19.95,
+    "deletion_rate": 12.42
+  },
+  "rtfx": 3.26,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 1291.67,
+  "num_skipped": 0,
+  "num_parameters": 1543304960
+}

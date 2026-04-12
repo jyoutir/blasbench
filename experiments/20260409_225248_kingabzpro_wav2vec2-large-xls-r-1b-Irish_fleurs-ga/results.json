@@ -1,0 +1,26 @@
+{
+  "model": "kingabzpro/wav2vec2-large-xls-r-1b-Irish",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 78.51,
+    "wer_ci95_lo": 77.52,
+    "wer_ci95_hi": 79.59,
+    "cer": 38.19,
+    "cer_ci95_lo": 37.5,
+    "cer_ci95_hi": 38.95,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 13550,
+    "insertions": 1936,
+    "deletions": 967,
+    "hits": 6440,
+    "substitution_rate": 64.66,
+    "insertion_rate": 9.24,
+    "deletion_rate": 4.61
+  },
+  "rtfx": 254.28,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 49.01,
+  "num_skipped": 0,
+  "num_parameters": 962542243
+}

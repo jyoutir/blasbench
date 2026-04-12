@@ -1,0 +1,26 @@
+{
+  "model": "jimregan/wav2vec2-large-xlsr-irish-basic",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 48.9,
+    "wer_ci95_lo": 46.75,
+    "wer_ci95_hi": 50.71,
+    "cer": 20.31,
+    "cer_ci95_lo": 19.25,
+    "cer_ci95_hi": 21.28,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 2749,
+    "insertions": 287,
+    "deletions": 283,
+    "hits": 3755,
+    "substitution_rate": 40.5,
+    "insertion_rate": 4.23,
+    "deletion_rate": 4.17
+  },
+  "rtfx": 383.21,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 10.97,
+  "num_skipped": 0,
+  "num_parameters": 315473570
+}

@@ -1,0 +1,26 @@
+{
+  "model": "Aditya3107/wav2vec2-large-xls-r-1b-ga-ie",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 32.44,
+    "wer_ci95_lo": 30.31,
+    "wer_ci95_hi": 34.7,
+    "cer": 12.82,
+    "cer_ci95_lo": 11.85,
+    "cer_ci95_hi": 13.8,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 1792,
+    "insertions": 118,
+    "deletions": 292,
+    "hits": 4703,
+    "substitution_rate": 26.4,
+    "insertion_rate": 1.74,
+    "deletion_rate": 4.3
+  },
+  "rtfx": 382.86,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 10.98,
+  "num_skipped": 0,
+  "num_parameters": 315475620
+}

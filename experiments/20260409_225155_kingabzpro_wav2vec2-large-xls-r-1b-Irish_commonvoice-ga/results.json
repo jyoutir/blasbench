@@ -1,0 +1,26 @@
+{
+  "model": "kingabzpro/wav2vec2-large-xls-r-1b-Irish",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 45.79,
+    "wer_ci95_lo": 43.87,
+    "wer_ci95_hi": 47.67,
+    "cer": 18.94,
+    "cer_ci95_lo": 17.88,
+    "cer_ci95_hi": 19.93,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 2591,
+    "insertions": 245,
+    "deletions": 272,
+    "hits": 3924,
+    "substitution_rate": 38.18,
+    "insertion_rate": 3.61,
+    "deletion_rate": 4.01
+  },
+  "rtfx": 156.11,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 26.94,
+  "num_skipped": 0,
+  "num_parameters": 962542243
+}

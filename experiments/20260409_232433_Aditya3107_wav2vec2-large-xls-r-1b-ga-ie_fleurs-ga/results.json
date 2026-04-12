@@ -1,0 +1,26 @@
+{
+  "model": "Aditya3107/wav2vec2-large-xls-r-1b-ga-ie",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 75.8,
+    "wer_ci95_lo": 74.9,
+    "wer_ci95_hi": 76.83,
+    "cer": 36.04,
+    "cer_ci95_lo": 35.35,
+    "cer_ci95_hi": 36.82,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 13013,
+    "insertions": 1290,
+    "deletions": 1582,
+    "hits": 6362,
+    "substitution_rate": 62.09,
+    "insertion_rate": 6.16,
+    "deletion_rate": 7.55
+  },
+  "rtfx": 603.27,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 20.66,
+  "num_skipped": 0,
+  "num_parameters": 315475620
+}

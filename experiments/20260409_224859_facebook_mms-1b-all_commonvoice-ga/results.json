@@ -1,0 +1,26 @@
+{
+  "model": "facebook/mms-1b-all",
+  "dataset": "cv-corpus-25.0-ga-IE/ga-IE",
+  "overall": {
+    "wer": 54.25,
+    "wer_ci95_lo": 52.53,
+    "wer_ci95_hi": 55.89,
+    "cer": 21.25,
+    "cer_ci95_lo": 20.36,
+    "cer_ci95_hi": 22.04,
+    "num_utterances": 874,
+    "total_ref_words": 6787,
+    "substitutions": 2992,
+    "insertions": 189,
+    "deletions": 501,
+    "hits": 3294,
+    "substitution_rate": 44.08,
+    "insertion_rate": 2.78,
+    "deletion_rate": 7.38
+  },
+  "rtfx": 140.52,
+  "total_audio_duration_s": 4205.11,
+  "total_processing_time_s": 29.93,
+  "num_skipped": 0,
+  "num_parameters": 964748494
+}

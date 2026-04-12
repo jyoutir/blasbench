@@ -1,0 +1,26 @@
+{
+  "model": "azure/speech-ga-IE",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 57.46,
+    "wer_ci95_lo": 55.89,
+    "wer_ci95_hi": 59.16,
+    "cer": 43.75,
+    "cer_ci95_lo": 41.81,
+    "cer_ci95_hi": 45.77,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 4497,
+    "insertions": 745,
+    "deletions": 6800,
+    "hits": 9660,
+    "substitution_rate": 21.46,
+    "insertion_rate": 3.55,
+    "deletion_rate": 32.45
+  },
+  "rtfx": 5.11,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 2439.71,
+  "num_skipped": 0,
+  "num_parameters": 0
+}

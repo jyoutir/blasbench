@@ -1,0 +1,26 @@
+{
+  "model": "facebook/omniASR_LLM_300M_v2",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 47.68,
+    "wer_ci95_lo": 46.6,
+    "wer_ci95_hi": 48.71,
+    "cer": 24.09,
+    "cer_ci95_lo": 23.46,
+    "cer_ci95_hi": 24.74,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 8049,
+    "insertions": 1026,
+    "deletions": 917,
+    "hits": 11991,
+    "substitution_rate": 38.41,
+    "insertion_rate": 4.9,
+    "deletion_rate": 4.38
+  },
+  "rtfx": 14.72,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 846.72,
+  "num_skipped": 0,
+  "num_parameters": 300000000
+}

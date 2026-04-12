@@ -1,0 +1,26 @@
+{
+  "model": "openai/whisper-large-v2",
+  "dataset": "google/fleurs/ga_ie",
+  "overall": {
+    "wer": 102.84,
+    "wer_ci95_lo": 97.99,
+    "wer_ci95_hi": 108.22,
+    "cer": 59.64,
+    "cer_ci95_lo": 55.02,
+    "cer_ci95_hi": 64.58,
+    "num_utterances": 842,
+    "total_ref_words": 20957,
+    "substitutions": 16396,
+    "insertions": 4153,
+    "deletions": 1003,
+    "hits": 3558,
+    "substitution_rate": 78.24,
+    "insertion_rate": 19.82,
+    "deletion_rate": 4.79
+  },
+  "rtfx": 6.56,
+  "total_audio_duration_s": 12462.12,
+  "total_processing_time_s": 1899.16,
+  "num_skipped": 0,
+  "num_parameters": 1543304960
+}
