@@ -1,0 +1,63 @@
+# Benchmark suite: evaluate all models on all Irish datasets
+# Usage: blasbench benchmark configs/benchmark_suite.yaml
+
+models:
+  - name: openai/whisper-large-v3
+    language: irish
+    task: transcribe
+    batch_size: 16
+    chunk_length_s: 30.0
+    torch_dtype: float16
+    device: auto
+    generate_kwargs:
+      num_beams: 5
+
+  - name: openai/whisper-large-v3-turbo
+    language: irish
+    task: transcribe
+    batch_size: 32
+    chunk_length_s: 30.0
+    torch_dtype: float16
+    device: auto
+    generate_kwargs: {}
+
+  - name: openai/whisper-medium
+    language: irish
+    task: transcribe
+    batch_size: 32
+    chunk_length_s: 30.0
+    torch_dtype: float16
+    device: auto
+    generate_kwargs: {}
+
+  - name: openai/whisper-small
+    language: irish
+    task: transcribe
+    batch_size: 64
+    chunk_length_s: 30.0
+    torch_dtype: float16
+    device: auto
+    generate_kwargs: {}
+
+datasets:
+  - type: huggingface
+    name: mozilla-foundation/common_voice_17_0
+    config: ga-IE
+    split: test
+    audio_column: audio
+    text_column: sentence
+
+  - type: huggingface
+    name: google/fleurs
+    config: ga_ie
+    split: test
+    audio_column: audio
+    text_column: transcription
+
+normalizer:
+  type: irish
+  remove_diacritics: false
+
+compute_cer: true
+per_dialect: true
+save_experiments: true

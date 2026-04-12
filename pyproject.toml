@@ -1,0 +1,93 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "blasbench"
+version = "0.1.0"
+description = "Irish (Gaeilge) ASR evaluation harness"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "BlasBench Contributors" }]
+keywords = ["irish", "gaeilge", "asr", "speech-to-text", "evaluation", "whisper"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "jiwer>=3.0",
+    "datasets>=2.14,<3.0",
+    "soundfile>=0.12",
+    "librosa>=0.10",
+    "typer>=0.9",
+    "rich>=13.0",
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "pandas>=2.0",
+    "torch>=2.0",
+    "transformers>=4.36",
+    "accelerate>=0.25",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "mypy>=1.5",
+    "ruff>=0.1",
+    "types-PyYAML",
+    "types-requests",
+]
+seamless = [
+    "sentencepiece>=0.1.99",
+]
+api = [
+    # Commercial ASR API references for the baseline leaderboard.
+    # Each is independently optional — install only what you have credentials for.
+    "azure-cognitiveservices-speech>=1.34",
+    "openai>=1.0",
+    "elevenlabs>=1.0",
+]
+omnilingual = [
+    # Meta Omnilingual ASR base models. fairseq2-based, NOT on HuggingFace.
+    # Weights download from Meta's CDN to ~/.cache/fairseq2/assets/ on first
+    # use. The 7B variant downloads ~30 GiB, so be patient on first run.
+    "omnilingual-asr>=0.1",
+]
+
+[project.scripts]
+blasbench = "blasbench.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/blasbench"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = false
+warn_unused_configs = true
+mypy_path = "src"
+packages = ["blasbench"]
+ignore_missing_imports = true
+disallow_subclassing_any = false
+disallow_untyped_decorators = false
+
+[tool.ruff]
+src = ["src", "tests"]
+target-version = "py310"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "A", "SIM"]
+ignore = ["B905"]  # zip strict= not needed when lengths validated upstream
+
+[tool.ruff.lint.per-file-ignores]
+"src/blasbench/cli.py" = ["B008"]  # Typer requires function calls in defaults

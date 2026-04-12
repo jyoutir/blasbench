@@ -1,0 +1,6 @@
+type: huggingface
+name: google/fleurs
+config: ga_ie
+split: test
+audio_column: audio
+text_column: transcription
